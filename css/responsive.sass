@@ -1,0 +1,113 @@
+//Styling for large desktops only
+@media (min-width: 1500px)
+
+
+//Styling for tablets and smaller
+@media (max-width: 770px)
+
+  div#search-modal
+    form
+      input#searchsubmit
+        padding: 13px 12px
+
+  div.container.single
+    flex-direction: column
+
+    div.sidebar
+      width: 100%
+      padding: 0px
+      margin-top: 20px
+
+  article
+    width: 100%
+
+    h2
+      font-size: 2em
+
+  div.grid-item
+    width: 50% !important
+
+  div.post.hero
+    flex-direction: column
+
+    div.img, div.meta
+      width: 100%
+
+    div.img
+      height: 250px
+
+  .mobilehide
+    display: none !important
+
+  .mobileshow
+    display: block !important
+
+  section#masthead
+    div.container
+      flex-direction: column
+
+      div:first-of-type
+        order: 2
+        width: 100%
+
+      div:last-of-type
+        display: none
+
+  section#featured
+    padding-top: 5px
+
+  div.post.hero div.meta h3
+    font-size: 2em
+
+//Styling for phones and smaller
+@media (max-width: 650px)
+
+  article.page
+    width: 100%
+    padding-left: 20px
+    padding-right: 20px
+    padding-bottom: 40px
+
+  div.sidebyside
+    width: 100% !important
+
+  section#menu
+    width: 100%
+    max-width: 100%
+    left: -100%
+
+    hr
+      display: none
+
+    nav:first-of-type
+      ul
+        li
+          font-size: 1em !important
+
+    nav:nth-of-type(2)
+      column-count: 2
+
+      ul
+        li
+          font-size: 0.8em !important
+
+  h2#archives
+    font-size: 2.3em
+    text-align: center
+
+  hr#archives
+    margin: 20px auto
+
+  article
+    div.content
+      blockquote, p blockquote
+        max-width: 100%
+        float: none !important
+
+        p
+          margin: 30px 0px 30px 0px !important
+          text-align: center
+
+@media (max-width: 500px)
+  div.grid-item
+    width: 100% !important

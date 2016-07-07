@@ -1,0 +1,86 @@
+@media (max-width: 770px) {
+  div#search-modal form input#searchsubmit {
+    padding: 13px 12px; }
+
+  div.container.single {
+    flex-direction: column; }
+    div.container.single div.sidebar {
+      width: 100%;
+      padding: 0px;
+      margin-top: 20px; }
+
+  article {
+    width: 100%; }
+    article h2 {
+      font-size: 2em; }
+
+  div.grid-item {
+    width: 50% !important; }
+
+  div.post.hero {
+    flex-direction: column; }
+    div.post.hero div.img, div.post.hero div.meta {
+      width: 100%; }
+    div.post.hero div.img {
+      height: 250px; }
+
+  .mobilehide {
+    display: none !important; }
+
+  .mobileshow {
+    display: block !important; }
+
+  section#masthead div.container {
+    flex-direction: column; }
+    section#masthead div.container div:first-of-type {
+      order: 2;
+      width: 100%; }
+    section#masthead div.container div:last-of-type {
+      display: none; }
+
+  section#featured {
+    padding-top: 5px; }
+
+  div.post.hero div.meta h3 {
+    font-size: 2em; } }
+@media (max-width: 650px) {
+  article.page {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px; }
+
+  div.sidebyside {
+    width: 100% !important; }
+
+  section#menu {
+    width: 100%;
+    max-width: 100%;
+    left: -100%; }
+    section#menu hr {
+      display: none; }
+    section#menu nav:first-of-type ul li {
+      font-size: 1em !important; }
+    section#menu nav:nth-of-type(2) {
+      column-count: 2; }
+      section#menu nav:nth-of-type(2) ul li {
+        font-size: 0.8em !important; }
+
+  h2#archives {
+    font-size: 2.3em;
+    text-align: center; }
+
+  hr#archives {
+    margin: 20px auto; }
+
+  article div.content blockquote, article div.content p blockquote {
+    max-width: 100%;
+    float: none !important; }
+    article div.content blockquote p, article div.content p blockquote p {
+      margin: 30px 0px 30px 0px !important;
+      text-align: center; } }
+@media (max-width: 500px) {
+  div.grid-item {
+    width: 100% !important; } }
+
+/*# sourceMappingURL=responsive.css.map */
