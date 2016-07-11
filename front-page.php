@@ -7,15 +7,6 @@
 <!-- A section displaying three featured posts -->
 <section id="featured">
 
-  <?php
-  function displayRandom() {
-      $photoAreas = array("/bg1.jpg", "/bg2.jpg", "/bg3.jpg");
-      $randomNumber = rand(0, (count($photoAreas) - 1));
-      echo $photoAreas[$randomNumber];
-  }
-?>
-
-  <div id="bg" style="background-image: url(<?php bloginfo('template_directory'); ?>/img/<?php displayRandom(); ?>"></div>
   <div id="grad"></div>
 
   <div class="container">
@@ -25,7 +16,7 @@
     $counter = 0;
     //The loop
     if ( have_posts() ){
-      while ( have_posts() && $counter<3 ){
+      while ( have_posts() && $counter<4 ){
         the_post();
 
         $feat = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
@@ -49,11 +40,14 @@ $feat = $feat[0];
             <?php
         } else {
           ?>
-          <div class="sidebyside">
-            <div class="post trail" style="background-image:url(<?php echo $feat; ?>) ">
+          <div class="trail-holder">
+            <div class="trail">
               <a class="cover" href="<?php the_permalink(); ?>"></a>
-              <div class="grad"></div>
+              <img src="<?php echo $feat; ?>" />
+              <h5><?php the_category( ", " ); ?> | By <?php the_author(); ?></h5>
               <h3><?php the_title(); ?></h3>
+              <hr>
+              <p><?php the_excerpt(); ?></p>
             </div>
           </div>
           <?php
@@ -75,11 +69,10 @@ $feat = $feat[0];
   </div>
 </section>
 
-<section id="latest">
-  <div class="container">
+<section id="latest" style="background-attachment: fixed; background-image: url(<?php bloginfo('template_directory'); ?>/img/light_wool.png">
+  <div class="container thinner">
 
-    <hr id="sides">
-    <h2 id="divider">The latest</h2>
+    <h2><i class="fa fa-circle"></i> Latest updates</h2>
 
 
 
@@ -92,22 +85,24 @@ $feat = $feat[0];
 
         //Establish a counter variable and stop the loop if the specified value is reached
         static $count = 0;
-        if ($count == "20") { break; }
+        if ($count == "10") { break; }
         else {
 
         $feat = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
 $feat = $feat[0];
           ?>
-          <div class="grid-item">
             <div class="post">
               <a class="cover" href="<?php the_permalink(); ?>"></a>
-              <img src="<?php echo $feat; ?>" />
-              <h5><?php the_category( ", " ); ?> | By <?php the_author(); ?></h5>
-              <h3><?php the_title(); ?></h3>
-              <hr>
-              <p><?php the_excerpt(); ?></p>
+                              <img src="<?php echo $feat; ?>" />
+              <div>
+                <div id="readmore">Read Story <i class="fa fa-caret-right"></i></div>
+
+                <h5><?php the_category( ", " ); ?> | By <?php the_author(); ?></h5>
+                <h3><?php the_title(); ?></h3>
+                <hr>
+                <p><?php the_excerpt(); ?></p>
+              </div>
             </div>
-          </div>
     <?php
   };
     //Iterate the counter
@@ -124,15 +119,5 @@ $feat = $feat[0];
   </div>
 </section>
 
-<script>
- window.onload = function () {
-jQuery('.grid').masonry({
-// options
-itemSelector: '.grid-item',
-itemSelector: '.grid-item',
-percentPosition: true
-});
-}
-</script>
 
 <?php get_footer(); ?>
