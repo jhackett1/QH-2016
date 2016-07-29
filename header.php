@@ -22,4 +22,8 @@
   </div>
 </header>
 
+<script>
+  new WOW().init();
+</script>
+
 <?php get_template_part( "search-modal" ); ?>

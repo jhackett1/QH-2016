@@ -69,7 +69,7 @@ $feat = $feat[0];
   </div>
 </section>
 
-<section id="latest" style="background-attachment: fixed; background-image: url(<?php bloginfo('template_directory'); ?>/img/light_wool.png">
+<section id="latest">
   <div class="container thinner">
 
     <h2><i class="fa fa-circle"></i> Latest updates</h2>
@@ -91,7 +91,7 @@ $feat = $feat[0];
         $feat = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
 $feat = $feat[0];
           ?>
-            <div class="post">
+            <div class="post wow animated fadeInUp" data-wow-duration="0.3s" data-wow-offset="0">
               <a class="cover" href="<?php the_permalink(); ?>"></a>
                               <img src="<?php echo $feat; ?>" />
               <div>
