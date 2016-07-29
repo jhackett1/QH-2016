@@ -17,6 +17,7 @@ $p-stack: Lato, serif
 
 // Basic style resets
 
+
 *
   margin: 0
   padding: 0
@@ -39,9 +40,10 @@ a
 a:hover
   text-decoration: underline
 
-h1, h2, h3, h4, h5
-  font-family: $h-stack
-  text-transform: uppercase
+section
+  h1, h2, h3, h4, h5
+    font-family: $h-stack
+    text-transform: uppercase
 
 p
   font-family: $p-stack
@@ -624,6 +626,7 @@ div.sidebar
       margin: 14px
       font-weight: 100
       font-family: $p-stack
+      font-size: 0.9em
 
     div#mc_embed_signup
       background: $brand-red
@@ -654,8 +657,9 @@ div.sidebar
           color: $brand-red
           padding: 5px
           box-sizing: content-box
-          font-size: 0.9em
+          font-size: 0.8em
           font-family: $p-stack
+          font-weight: 100
 
         input.button:hover
           background: $light-grey !important

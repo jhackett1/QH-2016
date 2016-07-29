@@ -20,7 +20,7 @@ a {
 a:hover {
   text-decoration: underline; }
 
-h1, h2, h3, h4, h5 {
+section h1, section h2, section h3, section h4, section h5 {
   font-family: Oswald, sans serif;
   text-transform: uppercase; }
 
@@ -514,7 +514,8 @@ div.sidebar {
       text-align: center;
       margin: 14px;
       font-weight: 100;
-      font-family: Lato, serif; }
+      font-family: Lato, serif;
+      font-size: 0.9em; }
     div.sidebar div.widget.red div#mc_embed_signup {
       background: #9c1f32;
       text-align: center; }
@@ -540,8 +541,9 @@ div.sidebar {
           color: #9c1f32;
           padding: 5px;
           box-sizing: content-box;
-          font-size: 0.9em;
-          font-family: Lato, serif; }
+          font-size: 0.8em;
+          font-family: Lato, serif;
+          font-weight: 100; }
         div.sidebar div.widget.red div#mc_embed_signup form input.button:hover {
           background: #efefef !important; }
   div.sidebar div.widget {
@@ -877,5 +879,3 @@ article.page {
   animation-name: flash;
   animation-duration: 2s;
   animation-iteration-count: infinite; }
-
-/*# sourceMappingURL=main.css.map */
