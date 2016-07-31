@@ -16,8 +16,6 @@ $h-stack: Oswald, sans serif
 $p-stack: Lato, serif
 
 // Basic style resets
-
-
 *
   margin: 0
   padding: 0
@@ -40,10 +38,10 @@ a
 a:hover
   text-decoration: underline
 
-section
-  h1, h2, h3, h4, h5
-    font-family: $h-stack
-    text-transform: uppercase
+
+h1, h2, h3, h4, h5
+  font-family: $h-stack
+  text-transform: uppercase
 
 p
   font-family: $p-stack
@@ -57,7 +55,7 @@ header
   width: 100%
   border-bottom: 0.5px solid #dfdfdf
   z-index: 60
-  padding: 10px 0px 10px 0px
+  padding: 0px
   position: relative
 
   div.container
@@ -73,21 +71,44 @@ header
       align-items: flex-end
 
   nav:first-of-type div ul li
-    display: inline
+    display: inline-block
     font-family: $h-stack
     font-weight: 400
     text-transform: uppercase
-    margin-right: 10px
+    margin-right: 0px
+    padding: 5px 3px 5px 3px
+    height: 100%
 
   a
     color: $text
 
+  a
+    color: $text
+    text-decoration: none !important
+
+  nav:first-of-type div ul li:hover
+    background-color: rgba(0,0,0,0.1)
+
+
   nav:last-of-type div ul li
-    display: inline
+    display: inline-block
     font-family: $h-stack
     font-weight: 400
     text-transform: uppercase
-    margin-right: 7px
+    margin-right: 0px
+    padding: 5px 5px 5px 5px
+    height: 100%
+
+  a
+    color: $text
+
+  a
+    color: $text
+    text-decoration: none !important
+
+  nav:last-of-type div ul li:hover
+    background-color: rgba(0,0,0,0.1)
+  
 
 div#spacer.on
   width: 100%
@@ -185,7 +206,7 @@ div.post.hero
 
   div.img
     width: 66%
-    max-height: 500px
+    min-height: 500px
     background-position: center
     background-size: cover
 
@@ -196,6 +217,7 @@ div.post.hero
 
     h3
       font-size: 2.5em
+      line-height: 1.2em
 
 div.sidebyside
   width: 50%
@@ -335,6 +357,9 @@ footer .container
   hr
     border: 3px solid $brand-red
     margin-bottom: 10px
+
+  nav
+    padding: 0px 40px 0px 40px
 
   nav ul li
     display: inline
@@ -828,6 +853,10 @@ article
       margin-left: 20px
       margin-right: 20px
       max-width: 100%
+
+    iframe
+      margin: 20px
+      max-width: 100% !important
 
     div.addthis_toolbox
       margin-left: 20px

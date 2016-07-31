@@ -22,7 +22,19 @@
     div.post.hero div.img, div.post.hero div.meta {
       width: 100%; }
     div.post.hero div.img {
-      height: 250px; }
+      height: 250px;
+      min-height: 250px; }
+
+  div.trail-holder:nth-of-type(2) {
+    display: none; }
+
+  div.trail-holder {
+    width: 50%; }
+    div.trail-holder div.trail h3 {
+      font-size: 1.3em; }
+
+  div.pagination a {
+    padding: 10px; }
 
   .mobilehide {
     display: none !important; }
@@ -38,11 +50,17 @@
     section#masthead div.container div:last-of-type {
       display: none; }
 
+  section#masthead div.container div {
+    min-height: 40px; }
+
   section#featured {
     padding-top: 5px; }
 
   div.post.hero div.meta h3 {
-    font-size: 2em; } }
+    font-size: 2em; }
+
+  section#latest h2 {
+    margin-left: 10px; } }
 @media (max-width: 650px) {
   article.page {
     width: 100%;
@@ -82,5 +100,3 @@
 @media (max-width: 500px) {
   div.grid-item {
     width: 100% !important; } }
-
-/*# sourceMappingURL=responsive.css.map */

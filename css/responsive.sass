@@ -35,6 +35,19 @@
 
     div.img
       height: 250px
+      min-height: 250px
+
+  div.trail-holder:nth-of-type(2)
+    display: none
+
+  div.trail-holder
+    width: 50%
+
+    div.trail h3
+      font-size: 1.3em
+
+  div.pagination a
+    padding: 10px
 
   .mobilehide
     display: none !important
@@ -53,11 +66,17 @@
       div:last-of-type
         display: none
 
+  section#masthead div.container div
+    min-height: 40px
+
   section#featured
     padding-top: 5px
 
   div.post.hero div.meta h3
     font-size: 2em
+
+  section#latest h2
+    margin-left: 10px
 
 //Styling for phones and smaller
 @media (max-width: 650px)

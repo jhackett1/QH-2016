@@ -20,7 +20,7 @@ a {
 a:hover {
   text-decoration: underline; }
 
-section h1, section h2, section h3, section h4, section h5 {
+h1, h2, h3, h4, h5 {
   font-family: Oswald, sans serif;
   text-transform: uppercase; }
 
@@ -36,7 +36,7 @@ header {
   width: 100%;
   border-bottom: 0.5px solid #dfdfdf;
   z-index: 60;
-  padding: 10px 0px 10px 0px;
+  padding: 0px;
   position: relative; }
   header div.container {
     display: flex;
@@ -48,19 +48,35 @@ header {
     header div.container nav:last-of-type {
       align-items: flex-end; }
   header nav:first-of-type div ul li {
-    display: inline;
+    display: inline-block;
     font-family: Oswald, sans serif;
     font-weight: 400;
     text-transform: uppercase;
-    margin-right: 10px; }
+    margin-right: 0px;
+    padding: 5px 3px 5px 3px;
+    height: 100%; }
   header a {
     color: #2d2d2d; }
+  header a {
+    color: #2d2d2d;
+    text-decoration: none !important; }
+  header nav:first-of-type div ul li:hover {
+    background-color: rgba(0, 0, 0, 0.1); }
   header nav:last-of-type div ul li {
-    display: inline;
+    display: inline-block;
     font-family: Oswald, sans serif;
     font-weight: 400;
     text-transform: uppercase;
-    margin-right: 7px; }
+    margin-right: 0px;
+    padding: 5px 5px 5px 5px;
+    height: 100%; }
+  header a {
+    color: #2d2d2d; }
+  header a {
+    color: #2d2d2d;
+    text-decoration: none !important; }
+  header nav:last-of-type div ul li:hover {
+    background-color: rgba(0, 0, 0, 0.1); }
 
 div#spacer.on {
   width: 100%;
@@ -146,7 +162,7 @@ div.post.hero {
   overflow: hidden; }
   div.post.hero div.img {
     width: 66%;
-    max-height: 500px;
+    min-height: 500px;
     background-position: center;
     background-size: cover; }
   div.post.hero div.meta {
@@ -154,7 +170,8 @@ div.post.hero {
     padding-bottom: 40px;
     min-height: 300px; }
     div.post.hero div.meta h3 {
-      font-size: 2.5em; }
+      font-size: 2.5em;
+      line-height: 1.2em; }
 
 div.sidebyside {
   width: 50%;
@@ -273,6 +290,8 @@ footer .container {
   footer .container hr {
     border: 3px solid #9c1f32;
     margin-bottom: 10px; }
+  footer .container nav {
+    padding: 0px 40px 0px 40px; }
   footer .container nav ul li {
     display: inline;
     list-style-type: none;
@@ -680,6 +699,9 @@ article {
     margin-left: 20px;
     margin-right: 20px;
     max-width: 100%; }
+  article div.content iframe {
+    margin: 20px;
+    max-width: 100% !important; }
   article div.content div.addthis_toolbox {
     margin-left: 20px; }
   article div.content blockquote, article div.content p blockquote {
