@@ -665,7 +665,8 @@ article {
     width: 100% !important;
     margin: 0px;
     max-width: 100%;
-    border-bottom: 3px solid #6f1523; }
+    border-bottom: 3px solid #6f1523;
+    height: auto; }
   article div.wp-caption {
     margin: 20px 0px 40px 0px;
     max-width: 100%;

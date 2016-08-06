@@ -18,6 +18,22 @@
 //Hide visual editor for everyone
 add_filter('user_can_richedit' , create_function('' , 'return false;') , 50);
 
+// img unautop
+function img_unautop($pee) {
+    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<div class="figure">$1</div>', $pee);
+    return $pee;
+}
+add_filter( 'the_content', 'img_unautop', 30 );
+
+
+//Custom image sizes
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'ogimg', 400 ); // 300 pixels wide (and unlimited height)
+}
+
+
 //Menu registration
 	 register_nav_menus(array(
 	   'top' => __('Smoke Media Menu'),
@@ -112,7 +128,7 @@ add_action( 'widgets_init', 'sidebar' );
 
 			extract ( $args, EXTR_SKIP);
 			$title = ( $instance['title']) ? $instance['title'] : '';
-			$category = ( $instance['title']) ? $instance['cat'] : '180';
+			$category = ( $instance['title']) ? $instance['cat'] : '9';
 
 			echo '<div class="widget">' ;
 			echo '<h4>' . $title . '</h4>' ;
