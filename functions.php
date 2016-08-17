@@ -8,7 +8,7 @@
 	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js');
 		wp_enqueue_script( 'masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js');
 
-		//Allow image logo
+//Allow image logo
 
 function themeslug_theme_customizer( $wp_customize ) {
 	$wp_customize->add_section( 'themeslug_logo_section' , array(
@@ -49,6 +49,22 @@ function add_theme_caps2() {
     // gets the author role
     $role = get_role( 'contributor' );
     $role->add_cap( 'edit_others_posts' );
+}
+add_action( 'admin_init', 'add_theme_caps2');
+
+function add_theme_caps3() {
+    // gets the author role
+    $role = get_role( 'contributor' );
+    $role->add_cap( 'edit_published_posts' );
+}
+add_action( 'admin_init', 'add_theme_caps3');
+
+function remove_theme_caps() {
+    // gets the author role
+    $role = get_role( 'editor' );
+    $role->remove_cap( 'publish_posts' );
+}
+add_action( 'admin_init', 'remove_theme_caps');
 
 // img unautop
 function img_unautop($pee) {
