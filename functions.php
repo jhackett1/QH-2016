@@ -8,6 +8,25 @@
 	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js');
 		wp_enqueue_script( 'masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js');
 
+		//Allow image logo
+
+function themeslug_theme_customizer( $wp_customize ) {
+	$wp_customize->add_section( 'themeslug_logo_section' , array(
+		'title'       => __( 'Logo', 'themeslug' ),
+		'priority'    => 30,
+		'description' => 'Upload a logo to replace the default site name and description in the header',
+	) );
+
+	$wp_customize->add_setting( 'themeslug_logo' );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
+	    'label'    => __( 'Logo', 'themeslug' ),
+	    'section'  => 'themeslug_logo_section',
+	    'settings' => 'themeslug_logo',
+	) ) );
+}
+add_action( 'customize_register', 'themeslug_theme_customizer' );
+
 //Adds in Google Web fonts
 	function load_fonts() {
 		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oswald:400,700,300|Lato:400,300,400italic,700');
@@ -17,6 +36,19 @@
 
 //Hide visual editor for everyone
 add_filter('user_can_richedit' , create_function('' , 'return false;') , 50);
+
+//Fix user roles
+function add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'contributor' );
+    $role->add_cap( 'upload_files' );
+}
+add_action( 'admin_init', 'add_theme_caps');
+
+function add_theme_caps2() {
+    // gets the author role
+    $role = get_role( 'contributor' );
+    $role->add_cap( 'edit_others_posts' );
 
 // img unautop
 function img_unautop($pee) {
@@ -345,26 +377,8 @@ function custom_oembed_filter($html, $url, $attr, $post_ID) {
 
 
 
-//Allow image logo
 
-function themeslug_theme_customizer( $wp_customize ) {
-	$wp_customize->add_section( 'themeslug_logo_section' , array(
-		'title'       => __( 'Logo', 'themeslug' ),
-		'priority'    => 30,
-		'description' => 'Upload a logo to replace the default site name and description in the header',
-	) );
-
-	$wp_customize->add_setting( 'themeslug_logo' );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-	    'label'    => __( 'Logo', 'themeslug' ),
-	    'section'  => 'themeslug_logo_section',
-	    'settings' => 'themeslug_logo',
-	) ) );
-}
-add_action( 'customize_register', 'themeslug_theme_customizer' );
-
-
+// New profile fields
 
 add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
