@@ -19,7 +19,7 @@
     $counter = 0;
     //The query
     $feat_query= new WP_Query( array(
-      'cat' => 179
+      'category_name' => 'featured'
     ));
 
     //The loop
