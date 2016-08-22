@@ -68,7 +68,7 @@ add_action( 'admin_init', 'remove_theme_caps');
 
 // img unautop
 function img_unautop($pee) {
-    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<div class="figure">$1</div>', $pee);
+    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', ' <div class="figure">$1</div>', $pee);
     return $pee;
 }
 add_filter( 'the_content', 'img_unautop', 30 );
